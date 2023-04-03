@@ -108,14 +108,12 @@ func (session *Session) listen() {
 			}
 			var rawReply = string(rawXML)
 			if strings.Contains(rawReply, "<rpc-reply") {
-
 				rpcReply, err := message.NewRPCReply(rawXML)
 				if err != nil {
 					println(fmt.Errorf("failed to marshall message into an RPCReply. %s", err))
 					continue
 				}
 				session.Listener.Dispatch(rpcReply.MessageID, 0, rpcReply)
-
 			} else if strings.Contains(rawReply, "<notification") {
 				notification, err := message.NewNotification(rawXML)
 				if err != nil {
