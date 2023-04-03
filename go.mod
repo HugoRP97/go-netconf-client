@@ -3,8 +3,8 @@ module github.com/hugorp97/go-netconf-client
 go 1.16
 
 require (
+	github.com/openshift-telco/go-netconf-client v1.0.5
 	golang.org/x/crypto v0.0.0-20210921155107-089bfa567519
-	golang.org/x/sys v0.0.0-20210809222454-d867a43fc93e // indirect
-	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
-	golang.org/x/tools v0.1.7 // indirect
 )
+
+replace github.com/openshift-telco/go-netconf-client => github.com/hugorp97/go-netconf-client v1.0.6
